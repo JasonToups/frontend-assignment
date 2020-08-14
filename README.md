@@ -80,7 +80,7 @@ A sample UI is mocked up below for reference, however feel free to design the la
 ### Assignment Guidelines
 - This assignment should take around two hours or less. There is no need for perfection, just meeting the basic requirements. 
 - Please create your component using a javascript framework such as React, Angular, Vue.JS, or any other of your choice. Feel free to use create-react-app, Next.js or any other fast app creator you like.
-- If you are using react and would like to get going quickly, this repository was created using create-react-app. Just fork it and add your code in a new file in src. Mount your component in App.js to display it. Make sure to `yarn init` after cloning the repo.
+- If you are using react and would like to get going quickly, this repository was created using create-react-app. Just fork it and add your code in a new file in src. Mount your component in App.js to display it. Make sure to `yarn init` after cloning the repo. See [README_CREATE_REACT_APP](README_CREATE_REACT_APP.md)
 - If you have any questions, please let us know at nrubinstein@sewerai.com
 
 ### Submission
