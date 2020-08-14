@@ -86,4 +86,4 @@ A sample UI is mocked up below for reference, however feel free to design the la
 ### Submission
 - Code for assignment should be uploaded to a github repository, either a new one you create or a fork of this one. Share your respository with github user `noachr` when complete.
 - Your repository should contain a running html file that demos your UI. If you use create-react-app or similar, you can just run `yarn build` to create a static app.
-- Your respository should have a readme describing your solution, the source code file location of your component, and the location of your running demo
+- Your repository should have a readme describing your solution, the source code file location of your component, and how to run your demo.
