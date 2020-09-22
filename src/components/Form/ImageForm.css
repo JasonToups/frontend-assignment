@@ -1,6 +1,10 @@
 .image-form {
-  padding: auto 0px;
+  /* padding: auto 0px; */
 }
 
 .submit-button {
+  padding: 5px 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border-style: solid;
 }

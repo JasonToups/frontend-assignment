@@ -14,15 +14,15 @@ const DataLabelling = () => {
 
   useEffect(() => {
     getImage();
-  }, []);
+  }, [renderImage]);
   // useEffect(() => {
   //   setRenderData(true);
   // }, [renderData]);
 
-  useEffect(() => {
-    getImage();
-    setRenderImage(false);
-  }, [renderImage]);
+  // useEffect(() => {
+  //   getImage();
+  //   // setRenderImage(false);
+  // }, [renderImage]);
 
   const getImage = async () => {
     const api = 'https://tyi19eoxij.execute-api.us-west-2.amazonaws.com/prod';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import './ImageForm.css';
 import schema from './Schema';
 
 //TODO need to re-render the image component and render a new form
@@ -13,9 +13,9 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const onSubmit = data => {
     updateImage(data);
-    setRenderImage(true);
+    setRenderImage(id);
     renderedFields();
-    reset(null);
+    reset();
   };
 
   const updateImage = async data => {
@@ -35,7 +35,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
     let returnFields = [];
     for (const name in formFields) {
       returnFields.push(
-        <>
+        <div key={name}>
           <label className='form-label'>{name}</label>
           <br />
           <input
@@ -49,7 +49,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
             ref={register}
           />
           <br />
-        </>,
+        </div>,
       );
     }
     return (
