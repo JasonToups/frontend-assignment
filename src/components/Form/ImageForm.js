@@ -1,16 +1,17 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 import schema from './Schema';
 
 const ImageForm = ({ code, id }) => {
-  const { useState } = React;
   const formFields = schema[code].fields;
-  console.log(formFields);
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = data => console.log(data);
 
   const renderedFields = () => {
     let returnFields = [];
     for (const name in formFields) {
-      console.log(name);
       returnFields.push(
         <>
           <label className='form-label'>{name}</label>
@@ -21,7 +22,10 @@ const ImageForm = ({ code, id }) => {
             min={formFields[name].minimum}
             max={formFields[name].maximum}
             minLength={formFields[name].min_Length}
-            maxLength={formFields[name].max_Length}></input>
+            maxLength={formFields[name].max_Length}
+            required={true}
+            ref={register}
+          />
           <br />
         </>,
       );
@@ -33,16 +37,11 @@ const ImageForm = ({ code, id }) => {
     );
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log(e.target);
-  };
-
   return (
     <>
       <h1>Image Form</h1>
       <p>ID: {id}</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         {renderedFields()}
         <input className='submit-button' type='submit' value='submit'></input>
       </form>
