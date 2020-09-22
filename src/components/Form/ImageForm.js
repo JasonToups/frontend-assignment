@@ -8,9 +8,13 @@ const ImageForm = ({ code, id, setRenderImage }) => {
   const formFields = schema[code].fields;
 
   const onSubmit = data => {
+    // makes POST request from API, if passes form validation
     updateImage(data);
+    // sets the state for the parent component to fetch and render a new image
     setRenderImage(id);
+    // renders new form fields
     renderedFields();
+    // resets the form fields
     reset();
   };
 
@@ -28,7 +32,6 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const renderedFields = () => {
     let returnFields = [];
-    console.log(formFields);
     for (const name in formFields) {
       returnFields.push(
         <div key={name}>
