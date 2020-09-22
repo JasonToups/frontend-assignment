@@ -1,0 +1,12 @@
+.data-labelling {
+  display: grid;
+  grid-template-areas: 'image data';
+}
+
+.image-display {
+  grid-area: image;
+}
+
+.image-data {
+  grid-area: data;
+}
