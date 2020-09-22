@@ -5,8 +5,10 @@
 
 .image-display {
   grid-area: image;
+  border-style: solid;
 }
 
 .image-data {
   grid-area: data;
+  border-style: solid;
 }

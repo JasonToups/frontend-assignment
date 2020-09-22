@@ -41,7 +41,6 @@ const ImageForm = ({ code, id, setRenderImage }) => {
           <input
             name={name}
             type={formFields[name].type}
-            value={null}
             min={formFields[name].minimum}
             max={formFields[name].maximum}
             minLength={formFields[name].min_Length}
@@ -61,14 +60,13 @@ const ImageForm = ({ code, id, setRenderImage }) => {
   };
 
   return (
-    <>
+    <div className='image-form'>
       <h1>Image Form</h1>
-      <p>ID: {id}</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         {renderedFields()}
         <input className='submit-button' type='submit' value='submit'></input>
       </form>
-    </>
+    </div>
   );
 };
 
