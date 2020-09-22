@@ -79,6 +79,12 @@ npm start
 
 The project will run on [http://localhost:3000/](http://localhost:3000/)
 
+To create a build run:
+
+```
+yarn build
+```
+
 To run the build from the build folder run:
 
 ```
