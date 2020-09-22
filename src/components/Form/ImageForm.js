@@ -5,13 +5,17 @@ import schema from './Schema';
 
 //TODO need to re-render the image component and render a new form
 
-const ImageForm = ({ code, id }) => {
+const ImageForm = ({ code, id, setRenderImage }) => {
   const { useState } = React;
+  const { register, handleSubmit, reset } = useForm();
   const [imageSubmitted, setImageSubmitted] = useState(false);
-  const { register, handleSubmit } = useForm();
   const formFields = schema[code].fields;
+
   const onSubmit = data => {
     updateImage(data);
+    setRenderImage(true);
+    renderedFields();
+    reset(null);
   };
 
   const updateImage = async data => {
@@ -37,6 +41,7 @@ const ImageForm = ({ code, id }) => {
           <input
             name={name}
             type={formFields[name].type}
+            value={null}
             min={formFields[name].minimum}
             max={formFields[name].maximum}
             minLength={formFields[name].min_Length}
@@ -63,7 +68,6 @@ const ImageForm = ({ code, id }) => {
         {renderedFields()}
         <input className='submit-button' type='submit' value='submit'></input>
       </form>
-      {imageSubmitted ? <h1>Submitted!</h1> : null}
     </>
   );
 };

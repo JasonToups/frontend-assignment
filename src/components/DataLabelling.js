@@ -9,10 +9,20 @@ import ImageForm from './Form/ImageForm';
 const DataLabelling = () => {
   const { useState, useEffect } = React;
   const [results, setResults] = useState(null);
+  const [renderImage, setRenderImage] = useState(null);
+  // const [renderData, setRenderData] = useState(null);
 
   useEffect(() => {
     getImage();
   }, []);
+  // useEffect(() => {
+  //   setRenderData(true);
+  // }, [renderData]);
+
+  useEffect(() => {
+    getImage();
+    setRenderImage(false);
+  }, [renderImage]);
 
   const getImage = async () => {
     const api = 'https://tyi19eoxij.execute-api.us-west-2.amazonaws.com/prod';
@@ -36,7 +46,7 @@ const DataLabelling = () => {
             material={material}
             shape={shape}
           />
-          <ImageForm code={code} id={id} />
+          <ImageForm code={code} id={id} setRenderImage={setRenderImage} />
         </div>
       </section>
     );
