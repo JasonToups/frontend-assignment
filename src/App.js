@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import DataLabelling from './components/DataLabelling';
 
 function App() {
   return (
-    <div className="App">
-      YOUR CODE HERE
+    <div className='App'>
+      <DataLabelling />
     </div>
   );
 }
