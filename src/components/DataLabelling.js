@@ -14,7 +14,7 @@ const DataLabelling = () => {
 
   useEffect(() => {
     getImage();
-  }, []);
+  }, [renderImage]);
   // useEffect(() => {
   //   setRenderData(true);
   // }, [renderData]);
