@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import schema from './Schema';
 
-//TODO need to handle image form post after submit
+//TODO need to re-render the image component and render a new form
 
 const ImageForm = ({ code, id }) => {
   const { useState } = React;
@@ -25,11 +25,6 @@ const ImageForm = ({ code, id }) => {
     });
     console.log(response.statusText);
     return setImageSubmitted(true);
-  };
-
-  const renderResponse = status => {
-    console.log(status);
-    return <h3>{status}</h3>;
   };
 
   const renderedFields = () => {
