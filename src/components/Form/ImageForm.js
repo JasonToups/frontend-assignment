@@ -35,7 +35,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
     let returnFields = [];
     for (const name in formFields) {
       returnFields.push(
-        <>
+        <div key={name}>
           <label className='form-label'>{name}</label>
           <br />
           <input
@@ -49,7 +49,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
             ref={register}
           />
           <br />
-        </>,
+        </div>,
       );
     }
     return (
