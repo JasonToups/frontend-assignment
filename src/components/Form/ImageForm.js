@@ -3,11 +3,16 @@ import { useForm } from 'react-hook-form';
 
 import schema from './Schema';
 
+//TODO need to handle image form post after submit
+
 const ImageForm = ({ code, id }) => {
   const formFields = schema[code].fields;
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    const json = JSON.stringify(data);
+    console.log(json);
+  };
 
   const renderedFields = () => {
     let returnFields = [];
