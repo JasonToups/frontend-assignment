@@ -13,7 +13,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const onSubmit = data => {
     updateImage(data);
-    setRenderImage(true);
+    setRenderImage(id);
     renderedFields();
     reset();
   };
