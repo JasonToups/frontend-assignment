@@ -1,7 +1,15 @@
 import React from 'react';
 
-const ImageData = () => {
-  return <h1>ImageData</h1>;
+const ImageData = ({ diameter, material, shape }) => {
+  return (
+    <div>
+      <h1>ImageData</h1>
+      <h3>Diameter: {diameter}</h3>
+      <h3>Material: {material}</h3>
+      <h3>Shape: {shape}</h3>
+      <hr />
+    </div>
+  );
 };
 
 export default ImageData;

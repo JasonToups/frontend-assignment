@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ImageForm = () => {
+const ImageForm = ({ code }) => {
   return <h1>Image Form</h1>;
 };
 

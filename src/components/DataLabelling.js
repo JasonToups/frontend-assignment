@@ -21,20 +21,23 @@ const DataLabelling = () => {
     setResults(json);
   };
 
-  return (
-    <section className='data-labelling'>
-      <div className='image-display'>
-        <Image
-          url='https://sai-assignment.s3-us-west-2.amazonaws.com/frontend/addd0151-09af-4832-865a-5c461808de18.jpg'
-          alt='addd0151-09af-4832-865a-5c461808de18'
-        />
-      </div>
-      <div className='image-data'>
-        <ImageData />
-        <ImageForm />
-      </div>
-    </section>
-  );
+  const renderResults = () => {
+    const { frame_url, id, code, pipe_parameters } = results;
+    const { diameter, material, shape } = pipe_parameters;
+    return (
+      <section className='data-labelling'>
+        <div className='image-display'>
+          <Image url={frame_url} alt={id} />
+        </div>
+        <div className='image-data'>
+          <ImageData diameter={diameter} material={material} shape={shape} />
+          <ImageForm />
+        </div>
+      </section>
+    );
+  };
+
+  return <>{results ? renderResults() : <h1>Loading Image</h1>}</>;
 };
 
 export default DataLabelling;
