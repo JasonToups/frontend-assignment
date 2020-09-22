@@ -70,13 +70,23 @@ const onSubmit = data => {
 After I was done with my initial pass of the project, I made a [bug-fix](https://github.com/JasonToups/frontend-assignment/tree/bug-fixes) branch to cleanup my code and fix any of the console errors that I was receiving, and to test out my fixes before merging them into master.
 
 ## Running the Project
-I forked my project from the SewerAI Frontend Assignment repo, so staring it should be the same.
+
+I forked my project from the SewerAI Frontend Assignment repo, so staring it should be the same. Just clone the repo, and run:
 
 ```
 npm start
 ```
 
+The project will run on [http://localhost:3000/](http://localhost:3000/)
 
+To run the build from the build folder run:
+
+```
+yarn global add serve
+serve -s build
+```
+
+The build will run on [http://localhost:5000](http://localhost:5000)
 
 # SewerAI Frontend Assignment
 
