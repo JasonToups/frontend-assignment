@@ -28,6 +28,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const renderedFields = () => {
     let returnFields = [];
+    console.log(formFields);
     for (const name in formFields) {
       returnFields.push(
         <div key={name}>
@@ -39,8 +40,8 @@ const ImageForm = ({ code, id, setRenderImage }) => {
             type={formFields[name].type}
             min={formFields[name].minimum}
             max={formFields[name].maximum}
-            minLength={formFields[name].min_Length}
-            maxLength={formFields[name].max_Length}
+            minLength={formFields[name].min_length}
+            maxLength={formFields[name].max_length}
             required={true}
             ref={register}
           />
