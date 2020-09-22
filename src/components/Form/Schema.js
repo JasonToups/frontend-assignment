@@ -1,0 +1,66 @@
+const schema = {
+  B: {
+    fields: {
+      percentage: {
+        type: 'number',
+        minimum: 50,
+        maximum: 100,
+      },
+      remarks: {
+        type: 'string',
+        max_length: 128,
+      },
+    },
+  },
+  DAGS: {
+    fields: {
+      percentage: {
+        type: 'number',
+        minimum: 0,
+        maximum: 100,
+      },
+      remarks: {
+        type: 'string',
+        max_length: 128,
+      },
+    },
+  },
+  JOL: {
+    fields: {
+      angle: {
+        type: 'number',
+        minimum: 0,
+        maximum: 45,
+      },
+    },
+  },
+  RFJ: {
+    fields: {
+      percentage: {
+        type: 'number',
+        minimum: 0,
+        maximum: 100,
+      },
+      angle: {
+        type: 'number',
+        minimum: 1,
+        maximum: 360,
+      },
+    },
+  },
+  TF: {
+    fields: {
+      radius: {
+        type: 'number',
+        minimum: 0.0,
+        maximum: 16.0,
+      },
+      near_joint: {
+        type: 'string',
+        max_length: 3,
+      },
+    },
+  },
+};
+
+export default schema;

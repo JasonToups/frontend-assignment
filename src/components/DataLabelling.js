@@ -30,8 +30,13 @@ const DataLabelling = () => {
           <Image url={frame_url} alt={id} />
         </div>
         <div className='image-data'>
-          <ImageData diameter={diameter} material={material} shape={shape} />
-          <ImageForm />
+          <ImageData
+            code={code}
+            diameter={diameter}
+            material={material}
+            shape={shape}
+          />
+          <ImageForm code={code} id={id} />
         </div>
       </section>
     );
