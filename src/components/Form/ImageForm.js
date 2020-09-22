@@ -6,12 +6,30 @@ import schema from './Schema';
 //TODO need to handle image form post after submit
 
 const ImageForm = ({ code, id }) => {
-  const formFields = schema[code].fields;
-
+  const { useState } = React;
+  const [imageSubmitted, setImageSubmitted] = useState(false);
   const { register, handleSubmit } = useForm();
+  const formFields = schema[code].fields;
   const onSubmit = data => {
-    const json = JSON.stringify(data);
-    console.log(json);
+    updateImage(data);
+  };
+
+  const updateImage = async data => {
+    const api = `https://tyi19eoxij.execute-api.us-west-2.amazonaws.com/prod/${id}`;
+    const response = await fetch(api, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    console.log(response.statusText);
+    return setImageSubmitted(true);
+  };
+
+  const renderResponse = status => {
+    console.log(status);
+    return <h3>{status}</h3>;
   };
 
   const renderedFields = () => {
@@ -50,6 +68,7 @@ const ImageForm = ({ code, id }) => {
         {renderedFields()}
         <input className='submit-button' type='submit' value='submit'></input>
       </form>
+      {imageSubmitted ? <h1>Submitted!</h1> : null}
     </>
   );
 };
