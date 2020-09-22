@@ -94,6 +94,8 @@ serve -s build
 
 The build will run on [http://localhost:5000](http://localhost:5000)
 
+***
+
 # SewerAI Frontend Assignment
 
 Data labeling is a major component of any machine learning pipeline. At SewerAI, we have our own set of web based tools to allow our labeling team to easily and quickly annotate data.
