@@ -34,6 +34,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
           <label className='form-label'>{name}</label>
           <br />
           <input
+            className='form-field'
             name={name}
             type={formFields[name].type}
             min={formFields[name].minimum}
