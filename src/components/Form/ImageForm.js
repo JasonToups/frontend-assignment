@@ -2,27 +2,48 @@ import React from 'react';
 
 import schema from './Schema';
 
-//use the code provided from the parent to make a validation against the schema code
-
 const ImageForm = ({ code, id }) => {
-  const formFields = schema[`${code}`];
-  // console.log(formFields);
-
-  let newObj = Object.fromEntries(
-    Object.entries(formFields.fields).map(([k, v]) => [k, v]),
-  );
-  console.log(newObj);
+  const formFields = schema[code].fields;
+  console.log(formFields);
 
   const renderedFields = () => {
-    const returnFields = {};
-
-    return <div>Need to Render Fields</div>;
+    let returnFields = [];
+    for (const name in formFields) {
+      console.log(name);
+      returnFields.push(
+        <>
+          <label className='form-label'>{name}</label>
+          <br />
+          <input
+            type={formFields[name].type}
+            min={formFields[name].minimum}
+            max={formFields[name].maximum}
+            minLength={formFields[name].min_Length}
+            maxLength={formFields[name].max_Length}></input>
+          <br />
+        </>,
+      );
+    }
+    return (
+      <>
+        <div>{returnFields}</div>
+      </>
+    );
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log(e.target);
+  };
+
   return (
     <>
       <h1>Image Form</h1>
-      <p>ID {id}</p>
-      {renderedFields()}
+      <p>ID: {id}</p>
+      <form onSubmit={handleSubmit}>
+        {renderedFields()}
+        <input className='submit-button' type='submit' value='submit'></input>
+      </form>
     </>
   );
 };
