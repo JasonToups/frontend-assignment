@@ -1,5 +1,6 @@
 .image-form {
-  /* padding: auto 0px; */
+  /* border-style: solid; */
+  padding-left: 20px;
 }
 
 .submit-button {

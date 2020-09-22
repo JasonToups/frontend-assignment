@@ -3,12 +3,8 @@ import { useForm } from 'react-hook-form';
 import './ImageForm.css';
 import schema from './Schema';
 
-//TODO need to re-render the image component and render a new form
-
 const ImageForm = ({ code, id, setRenderImage }) => {
-  const { useState } = React;
   const { register, handleSubmit, reset } = useForm();
-  const [imageSubmitted, setImageSubmitted] = useState(false);
   const formFields = schema[code].fields;
 
   const onSubmit = data => {
@@ -27,8 +23,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
       },
       body: JSON.stringify(data),
     });
-    console.log(response.statusText);
-    return setImageSubmitted(true);
+    return console.log(response.statusText);
   };
 
   const renderedFields = () => {
