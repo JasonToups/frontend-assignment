@@ -1,11 +1,15 @@
 .image-form {
-  /* border-style: solid; */
   padding-left: 20px;
+  width: 100%;
 }
 
 .submit-button {
   padding: 5px 10px;
-  margin-top: 20px;
+  margin: 20px 0;
   border-radius: 5px;
   border-style: solid;
+}
+
+.form-field {
+  width: 80%;
 }

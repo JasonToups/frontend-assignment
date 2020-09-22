@@ -1,6 +1,6 @@
 .data-labelling {
   display: grid;
-  grid-template-areas: 'image data';
+  grid-template-areas: 'image info';
 }
 
 .image-display {
@@ -9,7 +9,7 @@
 }
 
 .image-info {
-  grid-area: data;
+  grid-area: info;
   border-style: solid;
   text-align: left;
 }

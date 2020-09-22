@@ -8,9 +8,13 @@ const ImageForm = ({ code, id, setRenderImage }) => {
   const formFields = schema[code].fields;
 
   const onSubmit = data => {
+    // makes POST request from API, if passes form validation
     updateImage(data);
+    // sets the state for the parent component to fetch and render a new image
     setRenderImage(id);
+    // renders new form fields
     renderedFields();
+    // resets the form fields
     reset();
   };
 
@@ -34,12 +38,13 @@ const ImageForm = ({ code, id, setRenderImage }) => {
           <label className='form-label'>{name}</label>
           <br />
           <input
+            className='form-field'
             name={name}
             type={formFields[name].type}
             min={formFields[name].minimum}
             max={formFields[name].maximum}
-            minLength={formFields[name].min_Length}
-            maxLength={formFields[name].max_Length}
+            minLength={formFields[name].min_length}
+            maxLength={formFields[name].max_length}
             required={true}
             ref={register}
           />

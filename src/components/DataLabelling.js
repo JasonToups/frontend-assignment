@@ -10,6 +10,7 @@ const DataLabelling = () => {
   const [results, setResults] = useState(null);
   const [renderImage, setRenderImage] = useState(null);
 
+  // whenever renderImage updates in state, a new image is fetched
   useEffect(() => {
     getImage();
   }, [renderImage]);
