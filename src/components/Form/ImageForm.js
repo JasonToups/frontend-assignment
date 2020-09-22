@@ -6,20 +6,16 @@ import schema from './Schema';
 //TODO need to re-render the image component and render a new form
 
 const ImageForm = ({ code, id, setRenderImage }) => {
-  const { useState, useEffect } = React;
+  const { useState } = React;
   const { register, handleSubmit, reset } = useForm();
   const [imageSubmitted, setImageSubmitted] = useState(false);
   const formFields = schema[code].fields;
-
-  useEffect(() => {
-    reset();
-  }, [imageSubmitted]);
 
   const onSubmit = data => {
     updateImage(data);
     setRenderImage(true);
     renderedFields();
-    // reset(null);
+    reset();
   };
 
   const updateImage = async data => {
