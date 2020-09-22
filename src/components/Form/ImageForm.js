@@ -3,6 +3,7 @@ import React from 'react';
 import schema from './Schema';
 
 const ImageForm = ({ code, id }) => {
+  const { useState } = React;
   const formFields = schema[code].fields;
   console.log(formFields);
 
@@ -15,6 +16,7 @@ const ImageForm = ({ code, id }) => {
           <label className='form-label'>{name}</label>
           <br />
           <input
+            name={name}
             type={formFields[name].type}
             min={formFields[name].minimum}
             max={formFields[name].maximum}
