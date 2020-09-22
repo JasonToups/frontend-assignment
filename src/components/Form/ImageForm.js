@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-
+import './ImageForm.css';
 import schema from './Schema';
 
 //TODO need to re-render the image component and render a new form
