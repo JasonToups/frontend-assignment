@@ -15,11 +15,17 @@ const DataLabelling = () => {
     getImage();
   }, [renderImage]);
 
-  const getImage = async () => {
+  const getImage = () => {
     const api = 'https://tyi19eoxij.execute-api.us-west-2.amazonaws.com/prod';
-    const response = await fetch(api);
-    const json = await response.json();
-    setResults(json);
+    fetch(api)
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        setResults(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
   const renderResults = () => {
