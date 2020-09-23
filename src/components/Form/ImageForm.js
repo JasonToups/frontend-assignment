@@ -9,25 +9,34 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const onSubmit = data => {
     // makes POST request from API, if passes form validation
-    updateImage(data);
-    // sets the state for the parent component to fetch and render a new image
-    setRenderImage(id);
-    // renders new form fields
-    renderedFields();
-    // resets the form fields
-    reset();
+    postImage(data);
   };
 
-  const updateImage = async data => {
+  const postImage = data => {
     const api = `https://tyi19eoxij.execute-api.us-west-2.amazonaws.com/prod/${id}`;
-    const response = await fetch(api, {
+    fetch(api, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
+    }).then(response => {
+      if (response.ok) {
+        console.log('Success: ', response);
+        getNewImage();
+      } else {
+        console.error('Error: ', response);
+      }
     });
-    return console.log(response.statusText);
+  };
+
+  const getNewImage = () => {
+    // sets the state for the parent component to fetch and render a new image
+    setRenderImage(id);
+    //renders new form fields
+    renderedFields();
+    //resets the form fields
+    reset();
   };
 
   const renderedFields = () => {
