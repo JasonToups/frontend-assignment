@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './DataLabelling.css';
+
 import Image from './Image/Image';
 import ImageData from './Image/ImageData';
 import ImageForm from './Form/ImageForm';

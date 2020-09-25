@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import './ImageForm.css';
 import schema from './Schema';
+import capitalize from '../../utilities/capitalize';
 
 const ImageForm = ({ code, id, setRenderImage }) => {
   const { register, handleSubmit, reset } = useForm();
@@ -44,7 +45,7 @@ const ImageForm = ({ code, id, setRenderImage }) => {
     for (const name in formFields) {
       returnFields.push(
         <div key={name}>
-          <label className='form-label'>{name}</label>
+          <label className='form-label'>{capitalize(name)}</label>
           <br />
           <input
             className='form-field'
