@@ -36,18 +36,39 @@ I used [React Hook Form](https://react-hook-form.com/) to handle form validation
 
 Form fields are restricted to the min and max requirements stated in the schema.
 
+I grabbed the object keys first, then sorted them, so the form fields would render in alphabetical order. And I wrote a utility function called [capitalize](https://github.com/JasonToups/frontend-assignment/blob/master/src/utilities/capitalize.js) that capitalizes the first letter of each word and uses regex to remove any punctuation.
+
 ```javascript
-<input
-  className='form-field'
-  name={name}
-  type={formFields[name].type}
-  min={formFields[name].minimum}
-  max={formFields[name].maximum}
-  minLength={formFields[name].min_length}
-  maxLength={formFields[name].max_length}
-  required={true}
-  ref={register}
-/>
+const renderedFields = () => {
+  let returnFields = [];
+  let keys = Object.keys(formFields).sort();
+  for (let i = 0; i < keys.length; i++) {
+    let name = keys[i];
+    returnFields.push(
+      <div key={name}>
+        <label className='form-label'>{capitalize(name)}</label>
+        <br />
+        <input
+          className='form-field'
+          name={name}
+          type={formFields[name].type}
+          min={formFields[name].minimum}
+          max={formFields[name].maximum}
+          minLength={formFields[name].min_length}
+          maxLength={formFields[name].max_length}
+          required={true}
+          ref={register}
+        />
+        <br />
+      </div>,
+    );
+  }
+  return (
+    <>
+      <div>{returnFields}</div>
+    </>
+  );
+};
 ```
 
 The form validation happens on the frontend, so the _form will not submit_ unless all of the validations pass.
@@ -94,7 +115,7 @@ serve -s build
 
 The build will run on [http://localhost:5000](http://localhost:5000)
 
-***
+---
 
 # SewerAI Frontend Assignment
 
