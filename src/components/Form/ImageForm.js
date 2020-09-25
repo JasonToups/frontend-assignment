@@ -42,6 +42,8 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const renderedFields = () => {
     let returnFields = [];
+    // let keys = Object.keys(formFields);
+    // console.log(keys.sort());
     for (const name in formFields) {
       returnFields.push(
         <div key={name}>
