@@ -42,9 +42,9 @@ const ImageForm = ({ code, id, setRenderImage }) => {
 
   const renderedFields = () => {
     let returnFields = [];
-    // let keys = Object.keys(formFields);
-    // console.log(keys.sort());
-    for (const name in formFields) {
+    let keys = Object.keys(formFields).sort();
+    for (let i = 0; i < keys.length; i++) {
+      let name = keys[i];
       returnFields.push(
         <div key={name}>
           <label className='form-label'>{capitalize(name)}</label>
