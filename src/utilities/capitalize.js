@@ -1,5 +1,5 @@
 const capitalize = string => {
-  let puncutationless = string.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ' ');
+  let puncutationless = string.replace(/[.,\\/#!$%\\^&\\*;:{}=\-_`~()]/g, ' ');
   const words = [];
   const splitWords = puncutationless.split(' ');
   if (splitWords.length > 0) {
