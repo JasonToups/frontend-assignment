@@ -10,6 +10,4 @@ const capitalize = string => {
   return words.join(' ');
 };
 
-capitalize('no_shade');
-
 export default capitalize;
