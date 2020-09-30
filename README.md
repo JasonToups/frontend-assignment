@@ -4,7 +4,17 @@
 
 ## Enginering Plan
 
-I've been working with React Hooks, and I wanted to utilize them to handle state and update components.
+I built this using **React Hooks**, with _useState_ and _useEffect_ to render a **dynamic form** from an _API response_, and implemented front end form **validation** from a _JSON schema_.
+
+On _page load_, an image is fetched from an API. Then from the response, the Image Data is populated, and the Image Form fields are **dynamically generated** from the _parameters of the response_.
+
+The form fields are sorted alphabetically and capitalized, with any punctuation or underscores removed by a _Regular Expression_.
+
+The **validation** of the form fields are performed by a provided _JSON schema_.
+
+On Image Form submit, a Post request is made, and the form values are added to the image.
+
+**API Errors** are handled with *promises*, with errors being console logged as a console error.
 
 ## Components
 
