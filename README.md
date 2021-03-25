@@ -1,4 +1,4 @@
-# Frontend Assessment Solution by Jason Toups
+# Dynamic Form Validation with Schema
 
 ![thumbnail](./public/data-labelling-thumbnail.png)
 
